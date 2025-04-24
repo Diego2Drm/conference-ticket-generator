@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-Neutral-0: #ffffff;
+  --color-Neutral-300: #d3d0d8;
+  --color-Neutral-500: #9b8fa3;
+  --color-Neutral-700: #5c4f70;
+  --color-Neutral-900: #0d051a;
+
+  --color-Orange-500: #e44d4d;
+  --color-Orange-700: #cc4c4c;
+
+  /* Gradients cannot be directly converted to HEX, but here are the individual colors: */
+  --color-Gradient-text-start: #e44d4d;
+  --color-Gradient-text-end: #ffffff;
+}
