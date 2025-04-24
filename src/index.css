@@ -1,6 +1,11 @@
 @import "tailwindcss";
+@font-face{
+  font-family: Inconsolata;
+  src: url('../src/assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf');
+}
 
 @theme {
+  --font-Inconsolata: Inconsolata;
   --color-Neutral-0: #ffffff;
   --color-Neutral-300: #d3d0d8;
   --color-Neutral-500: #9b8fa3;
