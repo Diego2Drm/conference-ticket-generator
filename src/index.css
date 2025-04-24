@@ -18,4 +18,6 @@
   /* Gradients cannot be directly converted to HEX, but here are the individual colors: */
   --color-Gradient-text-start: #e44d4d;
   --color-Gradient-text-end: #ffffff;
+
+  --color-bacground: #19173f;
 }
