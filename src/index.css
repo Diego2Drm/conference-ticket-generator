@@ -12,7 +12,7 @@
   --color-Neutral-700: #5c4f70;
   --color-Neutral-900: #0d051a;
 
-  --color-Orange-500: #e44d4d;
+  --color-Orange-500: hsl(7, 88%, 67%);
   --color-Orange-700: #cc4c4c;
 
   /* Gradients cannot be directly converted to HEX, but here are the individual colors: */
@@ -20,4 +20,11 @@
   --color-Gradient-text-end: #ffffff;
 
   --color-bacground: #19173f;
+}
+
+.questions{
+  @apply text-Neutral-0 flex flex-col gap-2
+}
+.questionsInput{
+  @apply border-2 border-Neutral-700 bg-bacground rounded-lg p-3
 }
