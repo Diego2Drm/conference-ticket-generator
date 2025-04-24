@@ -22,7 +22,7 @@ const Layout = ({ children }: Props) => {
 
       <img src={bgMobile} alt="bg-mobile" />
 
-      <div className="absolute z-20 top-0 p-5">
+      <div className="absolute z-20 top-0 p-5 w-full">
         {children}
       </div>
 
