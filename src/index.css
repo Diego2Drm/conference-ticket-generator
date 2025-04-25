@@ -28,3 +28,6 @@
 .questionsInput{
   @apply border-2 border-Neutral-700 bg-bacground rounded-lg p-3
 }
+.textGradient{
+  @apply bg-gradient-to-r from-Gradient-text-start  to-Gradient-text-end text-transparent bg-clip-text
+}

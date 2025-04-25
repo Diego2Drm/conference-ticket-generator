@@ -1,15 +1,11 @@
-import { Form } from "./compnents/Form"
-import { Header } from "./compnents/Header"
-import { Layout } from "./compnents/Layout"
+import { useState } from "react"
+import { Register } from "./Register"
+import { Confirmation } from "./Confirmation"
 
 function App() {
+  const [isLogin, setIsLogin] = useState(false)
 
-  return (
-    <Layout>
-      <Header />
-      <Form />
-    </Layout>
-  )
+  return isLogin ? <Confirmation/> : <Register />
 }
 
 export default App
