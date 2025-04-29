@@ -8,8 +8,11 @@ export type ContextProps = {
   formData: InputPprops,
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void,
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
-  handleReset: () => void
-  submitData: InputPprops
+  handleReset: () => void,
+  submitData: InputPprops,
+  imagePrevious: string | null,
+  handleAddImage: (e: React.ChangeEvent<HTMLInputElement>) => void,
+  handleRemoveImage: () => void,
 }
 
 export type InputPprops = {

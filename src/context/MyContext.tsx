@@ -16,7 +16,10 @@ const Context = createContext<ContextProps>({
     fullName: '',
     email: '',
     userName: '',
-  }
+  },
+  imagePrevious: '',
+  handleAddImage: () => { },
+  handleRemoveImage: () => { },
 
 });
 
@@ -35,6 +38,27 @@ const MyContext = ({ children }: Props) => {
   });
 
   // Form
+  // DRAG AND DROP
+  const [imagePrevious, setimagesPrevious] = useState<string | null>(null);
+
+  const handleAddImage = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const reader = new FileReader();
+
+    const files = e.target.files;
+    if (!files || files.length === 0) return
+
+    reader.readAsDataURL(files[0]);
+    reader.onload = (e) => {
+      if (!e.target) return;
+      setimagesPrevious(e.target?.result as string)
+    };
+  };
+
+  const handleRemoveImage = () => {
+    setimagesPrevious(null)
+  }
+
+  // QUESTIONARY
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLogin(true)
@@ -63,6 +87,7 @@ const MyContext = ({ children }: Props) => {
       email: '',
       userName: '',
     });
+    setimagesPrevious(null)
   }
 
   const value: ContextProps = {
@@ -73,6 +98,9 @@ const MyContext = ({ children }: Props) => {
     handleReset,
     formData,
     submitData,
+    imagePrevious,
+    handleAddImage,
+    handleRemoveImage,
   }
 
   return (

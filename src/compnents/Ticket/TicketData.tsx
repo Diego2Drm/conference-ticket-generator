@@ -1,13 +1,12 @@
 import ticketImg from "../../assets/images/pattern-ticket.svg"
 import LogoMark from "../../assets/images/logo-mark.svg"
-import Avatar from "../../assets/images/image-avatar.jpg"
 import IconGitHub from "../../assets/images/icon-github.svg"
 import { useContext } from "react";
 import { Context } from "../../context/MyContext";
 
 const TicketData = () => {
 
-  const { submitData } = useContext(Context)
+  const { submitData, imagePrevious } = useContext(Context)
 
   return (
     <div className="mt-14 relative">
@@ -22,7 +21,7 @@ const TicketData = () => {
           </p>
         </div>
         <div className="flex gap-5 items-center">
-          <img src={Avatar} alt="avatar-image" className="w-10 h-10 rounded-md" />
+          <img src={imagePrevious ? imagePrevious : undefined} alt="avatar-image" className="w-10 h-10 rounded-md" />
           <p className="text-Neutral-0 text-xl">
             {submitData.fullName}
             <span className="flex items-center gap-1 text-neutral-300 text-xs">
