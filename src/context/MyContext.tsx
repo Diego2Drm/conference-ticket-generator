@@ -64,9 +64,9 @@ const MyContext = ({ children }: Props) => {
     setIsLogin(true)
     setSubmitData(formData)
   }
-  useEffect(() => {
-    console.log("Estado en App actualizado:", submitData);
-  }, [submitData]);
+  // useEffect(() => {
+  //   console.log("Estado en App actualizado:", submitData);
+  // }, [submitData]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({

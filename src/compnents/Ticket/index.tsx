@@ -12,7 +12,7 @@ const Ticket = () => {
       <Logo />
       <h2 className="text-[28px] font-bold text-Neutral-0 text-center mt-5">Congrats, <span className="textGradient">{submitData.fullName}</span>! Your ticket is ready</h2>
 
-      <p className="text-Neutral-300 text-center mt-4">
+      <p className="text-Neutral-300 text-center mt-4 md:text-xl">
         We´ve emailed your ticket to
         <span className="text-Orange-500"> {submitData.email} </span>
         and will send <br /> updates in the run up to the event.

@@ -1,6 +1,7 @@
 import React from "react"
 import { PatternLines } from "./Pattern-lines"
 import bgMobile from "../../assets/images/background-mobile.png"
+import bgTablet from "../../assets/images/background-tablet.png"
 import PatternSquigglyLineTop from "../../assets/images/pattern-squiggly-line-top.svg"
 import PatternSquigglyLineBottomMobileTablet from "../../assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg"
 
@@ -20,7 +21,8 @@ const Layout = ({ children }: Props) => {
         <img src={PatternSquigglyLineTop} alt="pattern-squiggly-line-top" className="lg:hidden" />
       </div>
 
-      <img src={bgMobile} alt="bg-mobile" />
+      <img src={bgMobile} alt="bg-mobile" className="md:hidden"/>
+      <img src={bgTablet} alt="bg-tablet" className="hidden md:block"/>
 
       <div className="absolute z-20 top-0 p-5 w-full">
         {children}
