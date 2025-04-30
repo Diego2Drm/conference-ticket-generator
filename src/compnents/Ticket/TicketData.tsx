@@ -12,7 +12,7 @@ const TicketData = () => {
     <div className="mt-14 relative">
       <img src={ticketImg} alt="ticket image" className="" />
 
-      <div className="w-60 h-32 absolute top-3 left-3 flex flex-col justify-between md:w-[27rem] md:h-[16rem]">
+      <div className="w-60 h-32 absolute top-3 left-3 flex flex-col justify-between md:w-[27rem] md:h-[16rem] lg:p-3">
         <div className="flex gap-5">
           <img src={LogoMark} alt="logo-mark" className="w-8 h-8 md:w-20 md:h-20" />
           <p className="text-Neutral-0 text-xl md:text-3xl">
@@ -31,7 +31,7 @@ const TicketData = () => {
           </p>
         </div>
       </div>
-      <p className="absolute right-0 top-16 text-xl text-Neutral-500 rotate-90">
+      <p className="absolute right-0 top-16 text-xl text-Neutral-500 rotate-90 md:text-2xl md:top-28 xl:top-32">
         #01609
       </p>
     </div>

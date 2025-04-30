@@ -6,7 +6,7 @@ const Form = () => {
   const { handleSubmit } = useContext(Context)
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="lg:w-1/2 lg:mx-auto">
       <DragAndDrop />
       <Questionary />
 

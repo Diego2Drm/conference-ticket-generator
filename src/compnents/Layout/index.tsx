@@ -2,6 +2,7 @@ import React from "react"
 import { PatternLines } from "./Pattern-lines"
 import bgMobile from "../../assets/images/background-mobile.png"
 import bgTablet from "../../assets/images/background-tablet.png"
+import bgDesktop from "../../assets/images/background-desktop.png"
 import PatternSquigglyLineTop from "../../assets/images/pattern-squiggly-line-top.svg"
 import PatternSquigglyLineBottomMobileTablet from "../../assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg"
 
@@ -12,7 +13,7 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
   return (
-    <section className="relative z-0 overflow-hidden">
+    <section className="relative z-0 overflow-hidden ">
       <div className="absolute w-full h-full z-10 top-0 ">
         <PatternLines />
       </div>
@@ -22,9 +23,10 @@ const Layout = ({ children }: Props) => {
       </div>
 
       <img src={bgMobile} alt="bg-mobile" className="md:hidden"/>
-      <img src={bgTablet} alt="bg-tablet" className="hidden md:block"/>
+      <img src={bgTablet} alt="bg-tablet" className="hidden md:block lg:hidden"/>
+      <img src={bgDesktop} alt="bg-desktop" className="hidden lg:block"/>
 
-      <div className="absolute z-20 top-0 p-5 w-full">
+      <div className="absolute z-20 top-0 p-5 w-full lg:top-10">
         {children}
       </div>
 
