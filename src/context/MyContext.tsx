@@ -22,6 +22,7 @@ const Context = createContext<ContextProps>({
   handleRemoveImage: () => { },
   errorDrag: false,
   errorEmail: false,
+  isLoading: false
 });
 
 const MyContext = ({ children }: Props) => {
@@ -85,9 +86,6 @@ const MyContext = ({ children }: Props) => {
     setSubmitData(formData)
     setErrorEmail(false)
   }
-  // useEffect(() => {
-  //   console.log("Estado en App actualizado:", submitData);
-  // }, [submitData]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     // const { name, value } = e.target;
@@ -113,6 +111,20 @@ const MyContext = ({ children }: Props) => {
     setimagesPrevious(null)
   }
 
+  const [isLoading, setIsLoading] = useState(false)
+
+// Spinner indicator
+  useEffect(() => {
+    if (isLogin) {
+      setIsLoading(true) //Activa el estado de carga
+      setTimeout(() => {
+        setIsLoading(false)
+      }, 2000);
+    }
+  }, [isLogin])
+
+
+
   const value: ContextProps = {
     isLogin,
     setIsLogin,
@@ -126,6 +138,7 @@ const MyContext = ({ children }: Props) => {
     handleRemoveImage,
     errorDrag,
     errorEmail,
+    isLoading
   }
 
   return (

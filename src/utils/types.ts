@@ -15,6 +15,7 @@ export type ContextProps = {
   handleRemoveImage: () => void,
   errorDrag: boolean
   errorEmail: boolean
+  isLoading: boolean
 }
 
 export type InputPprops = {
