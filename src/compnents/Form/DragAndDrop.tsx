@@ -14,10 +14,10 @@ const DragAndDrop = () => {
     <section className="mt-10">
 
       <p className="text-Neutral-0">Upload Avatar</p>
-      <div className="w-full bg-bacground h-36 border-2 border-dashed border-Neutral-500 rounded-2xl mt-2 flex flex-col justify-center items-center gap-5 relative">
+      <div className="w-full bg-bacground h-36 border-2 border-dashed border-Neutral-500 rounded-2xl mt-2 flex flex-col justify-center items-center gap-5 relative hover:bg-[#393655]">
         <input type="file"
           required
-          className={`${imagePrevious ? 'hidden' : 'block opacity-0 absolute inset-0 w-full h-full'}`}
+          className={`${imagePrevious ? 'hidden' : 'block opacity-0 absolute inset-0 w-full h-full cursor-pointer'}`}
           accept="image/*"
           onChange={handleAddImage}
         />

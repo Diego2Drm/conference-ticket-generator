@@ -19,12 +19,12 @@ const Layout = ({ children }: Props) => {
       </div>
 
       <div className="absolute z-10 top-7 right-0 w-1/2 h-20">
-        <img src={PatternSquigglyLineTop} alt="pattern-squiggly-line-top" className="lg:hidden" />
+        <img src={PatternSquigglyLineTop} alt="pattern-squiggly-line-top"/>
       </div>
 
       <img src={bgMobile} alt="bg-mobile" className="md:hidden"/>
-      <img src={bgTablet} alt="bg-tablet" className="hidden md:block lg:hidden"/>
-      <img src={bgDesktop} alt="bg-desktop" className="hidden lg:block"/>
+      <img src={bgTablet} alt="bg-tablet" className="hidden md:block xl:hidden"/>
+      <img src={bgDesktop} alt="bg-desktop" className="hidden xl:block"/>
 
       <div className="absolute z-20 top-0 p-5 w-full lg:top-10">
         {children}

@@ -20,7 +20,7 @@ const Ticket = () => {
 
       <TicketData />
 
-    <button className="w-full p-2 font-bold tracking-widest bg-Orange-500 mt-10 rounded-lg text-Neutral-0 text-center" onClick={handleReset}>New Ticket</button>
+    <button className="w-full p-2 font-bold tracking-widest bg-Orange-500 mt-10 rounded-lg text-Neutral-0 text-center hover:bg-Orange-700 duration-200 ease-in-out cursor-pointer" onClick={handleReset}>New Ticket</button>
     </section>
   )
 }

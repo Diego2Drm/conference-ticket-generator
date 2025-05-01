@@ -26,7 +26,7 @@
   @apply text-Neutral-0 flex flex-col gap-2
 }
 .questionsInput{
-  @apply border-2 border-Neutral-700 bg-bacground rounded-lg p-3
+  @apply border-2 border-Neutral-700 bg-bacground rounded-lg p-3 focus:outline-2 focus:outline-Neutral-0 hover:bg-[#393655] cursor-pointer
 }
 .InputError{
   @apply border-2 border-Orange-700 bg-bacground rounded-lg p-3

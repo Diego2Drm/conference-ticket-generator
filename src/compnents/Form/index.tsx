@@ -10,7 +10,7 @@ const Form = () => {
       <DragAndDrop />
       <Questionary />
 
-      <button className="bg-Orange-500 text-Neutral-900 w-full mt-5 text-center font-bold p-2 rounded-lg"
+      <button className="bg-Orange-500 text-Neutral-900 w-full mt-5 text-center font-bold p-2 rounded-lg hover:bg-Orange-700 duration-200 ease-in-out cursor-pointer"
         type="submit"
       >
         Generate My Tikect
