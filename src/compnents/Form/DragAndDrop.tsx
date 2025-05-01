@@ -4,10 +4,11 @@ import IconInfo from "../../assets/images/icon-info.svg"
 import { ImagePrevious } from "./ImagePrevious";
 import { ImageUpload } from "./ImageUpload";
 import { Context } from "../../context/MyContext";
+import { IconErrorInfo } from "./IconErrorInfo";
 
 const DragAndDrop = () => {
 
-  const { imagePrevious, handleAddImage } = useContext(Context)
+  const { imagePrevious, handleAddImage, errorDrag } = useContext(Context)
 
   return (
     <section className="mt-10">
@@ -15,6 +16,7 @@ const DragAndDrop = () => {
       <p className="text-Neutral-0">Upload Avatar</p>
       <div className="w-full bg-bacground h-36 border-2 border-dashed border-Neutral-500 rounded-2xl mt-2 flex flex-col justify-center items-center gap-5 relative">
         <input type="file"
+          required
           className={`${imagePrevious ? 'hidden' : 'block opacity-0 absolute inset-0 w-full h-full'}`}
           accept="image/*"
           onChange={handleAddImage}
@@ -26,10 +28,19 @@ const DragAndDrop = () => {
             <ImageUpload />
         }
       </div>
-      <div className="flex mt-2 gap-2">
-        <img src={IconInfo} alt="Icon-info" />
-        <p className="text-Neutral-500 text-xs">Upload your photo (JPG or PNG, max size: 500KB) </p>
-      </div>
+      {
+        !errorDrag ? <div className="flex mt-2 gap-2">
+          <img src={IconInfo} alt="Icon-info" />
+          <p className="text-Neutral-500 text-xs">Upload your photo (JPG or PNG, max size: 500KB) </p>
+        </div>
+          :
+          <div className="flex mt-2 gap-2">
+            <IconErrorInfo />
+            <p className="text-Orange-700 text-xs">File too large. Please upload a photo under 500KB</p>
+          </div>
+      }
+
+
     </section>
   )
 

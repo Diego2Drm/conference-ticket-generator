@@ -20,7 +20,8 @@ const Context = createContext<ContextProps>({
   imagePrevious: '',
   handleAddImage: () => { },
   handleRemoveImage: () => { },
-
+  errorDrag: false,
+  errorEmail: false,
 });
 
 const MyContext = ({ children }: Props) => {
@@ -40,12 +41,22 @@ const MyContext = ({ children }: Props) => {
   // Form
   // DRAG AND DROP
   const [imagePrevious, setimagesPrevious] = useState<string | null>(null);
+  const [errorDrag, setErrorDrag] = useState(false)
 
   const handleAddImage = (e: React.ChangeEvent<HTMLInputElement>) => {
     const reader = new FileReader();
-
     const files = e.target.files;
+
     if (!files || files.length === 0) return
+
+    const maxSize = 500 * 1024;
+
+    if (files[0].size > maxSize) {
+      setErrorDrag(true)
+      return;
+    } else {
+      setErrorDrag(false);
+    }
 
     reader.readAsDataURL(files[0]);
     reader.onload = (e) => {
@@ -59,16 +70,28 @@ const MyContext = ({ children }: Props) => {
   }
 
   // QUESTIONARY
+  const [errorEmail, setErrorEmail] = useState(false)
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setErrorEmail(true)
+      return;
+    }
+
     setIsLogin(true)
     setSubmitData(formData)
+    setErrorEmail(false)
   }
   // useEffect(() => {
   //   console.log("Estado en App actualizado:", submitData);
   // }, [submitData]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // const { name, value } = e.target;
+
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -101,6 +124,8 @@ const MyContext = ({ children }: Props) => {
     imagePrevious,
     handleAddImage,
     handleRemoveImage,
+    errorDrag,
+    errorEmail,
   }
 
   return (

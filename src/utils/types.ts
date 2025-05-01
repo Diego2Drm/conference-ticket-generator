@@ -13,6 +13,8 @@ export type ContextProps = {
   imagePrevious: string | null,
   handleAddImage: (e: React.ChangeEvent<HTMLInputElement>) => void,
   handleRemoveImage: () => void,
+  errorDrag: boolean
+  errorEmail: boolean
 }
 
 export type InputPprops = {
