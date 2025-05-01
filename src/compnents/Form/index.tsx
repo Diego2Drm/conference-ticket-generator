@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 import { DragAndDrop } from "./DragAndDrop"
 import { Questionary } from "./Questionary"
 import { Context } from "../../context/MyContext"
